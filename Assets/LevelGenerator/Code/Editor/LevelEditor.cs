@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace JuanRod.LevelGenerator.Code.Editor
+namespace LevelGenerator.Code.Editor
 {
     [CustomEditor(typeof(Level))]
     public class LevelEditor : UnityEditor.Editor
@@ -14,6 +14,11 @@ namespace JuanRod.LevelGenerator.Code.Editor
             if (GUILayout.Button("Add Section Template"))
             {
                 myScript.AddSectionTemplate();
+            }
+
+            if (GUILayout.Button("Add Dead End Template"))
+            {
+                myScript.AddDeadEndTemplate();
             }
         }
     }

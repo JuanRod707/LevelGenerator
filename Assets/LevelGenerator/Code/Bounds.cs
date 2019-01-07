@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace JuanRod.LevelGenerator.Code
+namespace LevelGenerator.Code
 {
     public class Bounds : MonoBehaviour
     {

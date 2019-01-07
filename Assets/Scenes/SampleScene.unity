@@ -292,7 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6626a6e366a9c48a48525cde4050d0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLevelSize: 80
+  MaxLevelSize: 100
+  MaxAllowedOrder: 10
   Sections:
   - {fileID: 11835433341965080, guid: c922fec10f3cea841860c7478e6c2899, type: 3}
   - {fileID: 1492136533057598152, guid: a53c3c7d7c7a455419092c05e890a804, type: 3}
@@ -304,10 +305,9 @@ MonoBehaviour:
   - {fileID: 11835433341965080, guid: c922fec10f3cea841860c7478e6c2899, type: 3}
   - {fileID: 11835433341965080, guid: c922fec10f3cea841860c7478e6c2899, type: 3}
   DeadEnds:
-  - {fileID: 4122956223672260029, guid: 1352c06b785da1a409b8f9feba639229, type: 3}
+  - {fileID: 6867956003714455516, guid: 1352c06b785da1a409b8f9feba639229, type: 3}
   InitialSectionTags:
   - central
-  MaxAllowedOrder: 10
   SpecialRules:
   - Tag: spawn
     MinAmount: 1

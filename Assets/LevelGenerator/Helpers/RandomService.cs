@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace JuanRod.Common
+namespace LevelGenerator.Helpers
 {
     public static class RandomService
     {

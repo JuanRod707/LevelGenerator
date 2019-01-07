@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JuanRod.LevelGenerator.Code.Structure
+namespace LevelGenerator.Code.Structure
 {
     [Serializable]
     public class WeightedSectionList : WeightedList

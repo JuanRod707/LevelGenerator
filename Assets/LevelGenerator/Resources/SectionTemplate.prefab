@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 5535176130663972557}
   - component: {fileID: 8929438006999938277}
   m_Layer: 0
-  m_Name: BaseSection
+  m_Name: SectionTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4621685801469818115}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

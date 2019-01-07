@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JuanRod.LevelGenerator.Code.Exceptions
+namespace LevelGenerator.Code.Exceptions
 {
     public class InvalidRuleDeclarationException : Exception
     {

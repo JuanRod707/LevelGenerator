@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using JuanRod.Common;
+using LevelGenerator.Helpers;
 
-namespace JuanRod.LevelGenerator.Code.Structure
+namespace LevelGenerator.Code.Structure
 {
     public abstract class WeightedList
     {
