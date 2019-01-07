@@ -124,10 +124,10 @@ MonoBehaviour:
   Tags:
   - room
   CreatesTags:
-  - corridor
+  - room
   Exits: {fileID: 8695841557739317041}
   Bounds: {fileID: 5726012082559340953}
-  DeadEndChance: 50
+  DeadEndChance: 10
 --- !u!1 &5792981730509015865
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,14 +31,14 @@ namespace LevelGenerator.Code
         /// </summary>
         public int DeadEndChance;
 
-        protected Level levelContainer;
+        protected Generator GeneratorContainer;
         protected int order;
         
-        public void Initialize(Level level, int sourceOrder)
+        public void Initialize(Generator generator, int sourceOrder)
         {
-            levelContainer = level;
-            transform.SetParent(levelContainer.transform);
-            levelContainer.RegisterNewSection(this);
+            GeneratorContainer = generator;
+            transform.SetParent(GeneratorContainer.transform);
+            GeneratorContainer.RegisterNewSection(this);
             order = sourceOrder + 1;
 
             GenerateAnnexes();
@@ -50,7 +50,7 @@ namespace LevelGenerator.Code
             {
                 foreach (var e in Exits.ExitSpots)
                 {
-                    if (levelContainer.LevelSize > 0 && order < levelContainer.MaxAllowedOrder)
+                    if (GeneratorContainer.LevelSize > 0 && order < GeneratorContainer.MaxAllowedOrder)
                         if (RandomService.RollD100(DeadEndChance))
                             PlaceDeadEnd(e);
                         else
@@ -63,10 +63,10 @@ namespace LevelGenerator.Code
 
         protected void GenerateSection(Transform exit)
         {
-            var candidate = Instantiate(levelContainer.PickSectionWithTag(CreatesTags), exit).GetComponent<Section>();
-            if (levelContainer.IsSectionValid(candidate.Bounds, Bounds))
+            var candidate = Instantiate(GeneratorContainer.PickSectionWithTag(CreatesTags), exit).GetComponent<Section>();
+            if (GeneratorContainer.IsSectionValid(candidate.Bounds, Bounds))
             {
-                candidate.Initialize(levelContainer, order);
+                candidate.Initialize(GeneratorContainer, order);
             }
             else
             {
@@ -75,6 +75,6 @@ namespace LevelGenerator.Code
             }
         }
 
-        protected void PlaceDeadEnd(Transform exit) => Instantiate(levelContainer.DeadEnds.PickOne(), exit).Initialize(levelContainer);
+        protected void PlaceDeadEnd(Transform exit) => Instantiate(GeneratorContainer.DeadEnds.PickOne(), exit).Initialize(GeneratorContainer);
     }
 }

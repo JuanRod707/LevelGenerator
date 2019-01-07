@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace LevelGenerator.Code
 {
-    public class Level : MonoBehaviour
+    public class Generator : MonoBehaviour
     {
         /// <summary>
         /// Maximum level size measured in sections

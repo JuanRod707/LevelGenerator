@@ -9,10 +9,10 @@ namespace LevelGenerator.Code
         /// </summary>
         public Bounds Bounds;
 
-        public void Initialize(Level level)
+        public void Initialize(Generator generator)
         {
-            transform.SetParent(level.transform);
-            level.RegistrerNewDeadEnd(Bounds.Colliders);
+            transform.SetParent(generator.transform);
+            generator.RegistrerNewDeadEnd(Bounds.Colliders);
         }
     }
 }
