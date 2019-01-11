@@ -303,7 +303,7 @@ MonoBehaviour:
   Tags:
   - room
   CreatesTags:
-  - room
+  - corridor
   Exits: {fileID: 1183301080548993749}
   Bounds: {fileID: 91026702257837850}
   DeadEndChance: 10

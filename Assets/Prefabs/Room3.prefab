@@ -156,7 +156,7 @@ MonoBehaviour:
   - room
   - central
   CreatesTags:
-  - room
+  - corridor
   Exits: {fileID: 6939146243761094065}
   Bounds: {fileID: 6311786956086266649}
   DeadEndChance: 10

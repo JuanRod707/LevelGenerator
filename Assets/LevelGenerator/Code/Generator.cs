@@ -4,11 +4,17 @@ using LevelGenerator.Code.Exceptions;
 using LevelGenerator.Code.Structure;
 using LevelGenerator.Helpers;
 using UnityEngine;
+using Random = System.Random;
 
 namespace LevelGenerator.Code
 {
     public class Generator : MonoBehaviour
     {
+        /// <summary>
+        /// Generator seed
+        /// </summary>
+        public int Seed;
+        
         /// <summary>
         /// Maximum level size measured in sections
         /// </summary>
@@ -49,6 +55,11 @@ namespace LevelGenerator.Code
 
         protected void Start()
         {
+            if (Seed != 0)
+                RandomService.SetSeed(Seed);
+            else
+                Seed = RandomService.Seed;
+            
             CheckRuleIntegrity();
             LevelSize = MaxLevelSize;
             CreateInitialSection();
