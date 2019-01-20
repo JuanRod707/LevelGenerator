@@ -63,7 +63,10 @@ namespace LevelGenerator.Code
 
         protected void GenerateSection(Transform exit)
         {
-            var candidate = Instantiate(GeneratorContainer.PickSectionWithTag(CreatesTags), exit).GetComponent<Section>();
+            var candidate = IsAdvancedExit(exit)
+                ? BuildSectionFromExit(exit.GetComponent<AdvancedExit>())
+                : BuildSectionFromExit(exit);
+                
             if (GeneratorContainer.IsSectionValid(candidate.Bounds, Bounds))
             {
                 candidate.Initialize(GeneratorContainer, order);
@@ -76,5 +79,11 @@ namespace LevelGenerator.Code
         }
 
         protected void PlaceDeadEnd(Transform exit) => Instantiate(GeneratorContainer.DeadEnds.PickOne(), exit).Initialize(GeneratorContainer);
+
+        protected bool IsAdvancedExit(Transform exit) => exit.GetComponent<AdvancedExit>() != null;
+
+        protected Section BuildSectionFromExit(Transform exit) => Instantiate(GeneratorContainer.PickSectionWithTag(CreatesTags), exit).GetComponent<Section>();
+
+        protected Section BuildSectionFromExit(AdvancedExit exit) => Instantiate(GeneratorContainer.PickSectionWithTag(exit.CreatesTags), exit.transform).GetComponent<Section>();
     }
 }
