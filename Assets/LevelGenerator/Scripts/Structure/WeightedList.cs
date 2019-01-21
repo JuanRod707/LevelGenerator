@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using LevelGenerator.Helpers;
+using LevelGenerator.Scripts.Helpers;
 
-namespace LevelGenerator.Code.Structure
+namespace LevelGenerator.Scripts.Structure
 {
     public abstract class WeightedList
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace LevelGenerator.Code
+namespace LevelGenerator.Scripts
 {
     public class Bounds : MonoBehaviour
     {

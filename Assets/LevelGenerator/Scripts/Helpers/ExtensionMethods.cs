@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace LevelGenerator.Helpers
+namespace LevelGenerator.Scripts.Helpers
 {
     public static class ExtensionMethods
     {

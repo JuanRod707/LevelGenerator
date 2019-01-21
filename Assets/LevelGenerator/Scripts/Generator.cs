@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using LevelGenerator.Code.Exceptions;
-using LevelGenerator.Code.Structure;
-using LevelGenerator.Helpers;
+using LevelGenerator.Scripts.Exceptions;
+using LevelGenerator.Scripts.Helpers;
+using LevelGenerator.Scripts.Structure;
 using UnityEngine;
-using Random = System.Random;
 
-namespace LevelGenerator.Code
+namespace LevelGenerator.Scripts
 {
     public class Generator : MonoBehaviour
     {

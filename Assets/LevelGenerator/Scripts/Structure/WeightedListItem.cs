@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LevelGenerator.Code.Structure
+namespace LevelGenerator.Scripts.Structure
 {
     [Serializable]
     public class WeightedListItem

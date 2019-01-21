@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace LevelGenerator.Code
+namespace LevelGenerator.Scripts
 {
     public class Exits : MonoBehaviour
     {

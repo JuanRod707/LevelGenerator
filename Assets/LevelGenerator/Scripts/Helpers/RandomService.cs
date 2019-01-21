@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace LevelGenerator.Helpers
+namespace LevelGenerator.Scripts.Helpers
 {
     public static class RandomService
     {

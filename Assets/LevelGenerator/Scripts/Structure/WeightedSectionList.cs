@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LevelGenerator.Code.Structure
+namespace LevelGenerator.Scripts.Structure
 {
     [Serializable]
     public class WeightedSectionList : WeightedList

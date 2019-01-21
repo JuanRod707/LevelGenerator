@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace LevelGenerator.Code.Editor
+namespace LevelGenerator.Scripts.Editor
 {
     [CustomEditor(typeof(Generator))]
     public class GeneratorEditor : UnityEditor.Editor
