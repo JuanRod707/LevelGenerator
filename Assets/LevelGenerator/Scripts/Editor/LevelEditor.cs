@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace LevelGenerator.Scripts.Editor
 {
-    [CustomEditor(typeof(Generator))]
+    [CustomEditor(typeof(LevelGenerator))]
     public class GeneratorEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
-            Generator myScript = (Generator)target;
+            LevelGenerator myScript = (LevelGenerator)target;
             if (GUILayout.Button("Add Section Template"))
             {
                 myScript.AddSectionTemplate();

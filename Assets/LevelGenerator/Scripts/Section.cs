@@ -31,14 +31,14 @@ namespace LevelGenerator.Scripts
         /// </summary>
         public int DeadEndChance;
 
-        protected Generator GeneratorContainer;
+        protected LevelGenerator LevelGenerator;
         protected int order;
         
-        public void Initialize(Generator generator, int sourceOrder)
+        public void Initialize(LevelGenerator levelGenerator, int sourceOrder)
         {
-            GeneratorContainer = generator;
-            transform.SetParent(GeneratorContainer.transform);
-            GeneratorContainer.RegisterNewSection(this);
+            LevelGenerator = levelGenerator;
+            transform.SetParent(LevelGenerator.Container);
+            LevelGenerator.RegisterNewSection(this);
             order = sourceOrder + 1;
 
             GenerateAnnexes();
@@ -50,7 +50,7 @@ namespace LevelGenerator.Scripts
             {
                 foreach (var e in Exits.ExitSpots)
                 {
-                    if (GeneratorContainer.LevelSize > 0 && order < GeneratorContainer.MaxAllowedOrder)
+                    if (LevelGenerator.LevelSize > 0 && order < LevelGenerator.MaxAllowedOrder)
                         if (RandomService.RollD100(DeadEndChance))
                             PlaceDeadEnd(e);
                         else
@@ -67,9 +67,9 @@ namespace LevelGenerator.Scripts
                 ? BuildSectionFromExit(exit.GetComponent<AdvancedExit>())
                 : BuildSectionFromExit(exit);
                 
-            if (GeneratorContainer.IsSectionValid(candidate.Bounds, Bounds))
+            if (LevelGenerator.IsSectionValid(candidate.Bounds, Bounds))
             {
-                candidate.Initialize(GeneratorContainer, order);
+                candidate.Initialize(LevelGenerator, order);
             }
             else
             {
@@ -78,12 +78,12 @@ namespace LevelGenerator.Scripts
             }
         }
 
-        protected void PlaceDeadEnd(Transform exit) => Instantiate(GeneratorContainer.DeadEnds.PickOne(), exit).Initialize(GeneratorContainer);
+        protected void PlaceDeadEnd(Transform exit) => Instantiate(LevelGenerator.DeadEnds.PickOne(), exit).Initialize(LevelGenerator);
 
         protected bool IsAdvancedExit(Transform exit) => exit.GetComponent<AdvancedExit>() != null;
 
-        protected Section BuildSectionFromExit(Transform exit) => Instantiate(GeneratorContainer.PickSectionWithTag(CreatesTags), exit).GetComponent<Section>();
+        protected Section BuildSectionFromExit(Transform exit) => Instantiate(LevelGenerator.PickSectionWithTag(CreatesTags), exit).GetComponent<Section>();
 
-        protected Section BuildSectionFromExit(AdvancedExit exit) => Instantiate(GeneratorContainer.PickSectionWithTag(exit.CreatesTags), exit.transform).GetComponent<Section>();
+        protected Section BuildSectionFromExit(AdvancedExit exit) => Instantiate(LevelGenerator.PickSectionWithTag(exit.CreatesTags), exit.transform).GetComponent<Section>();
     }
 }

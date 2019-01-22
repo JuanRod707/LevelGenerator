@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace LevelGenerator.Code
+namespace LevelGenerator.Scripts
 {
     public class AdvancedExit : MonoBehaviour
     {

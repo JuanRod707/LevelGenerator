@@ -7,13 +7,18 @@ using UnityEngine;
 
 namespace LevelGenerator.Scripts
 {
-    public class Generator : MonoBehaviour
+    public class LevelGenerator : MonoBehaviour
     {
         /// <summary>
-        /// Generator seed
+        /// LevelGenerator seed
         /// </summary>
         public int Seed;
-        
+
+        /// <summary>
+        /// Container for all sections in hierarchy
+        /// </summary>
+        public Transform SectionContainer;
+
         /// <summary>
         /// Maximum level size measured in sections
         /// </summary>
@@ -47,6 +52,7 @@ namespace LevelGenerator.Scripts
         protected List<Section> registeredSections = new List<Section>();
         
         public int LevelSize { get; private set; }
+        public Transform Container => SectionContainer != null ? SectionContainer : transform;
 
         protected IEnumerable<Collider> RegisteredColliders => registeredSections.SelectMany(s => s.Bounds.Colliders).Union(DeadEndColliders);
         protected List<Collider> DeadEndColliders = new List<Collider>();
