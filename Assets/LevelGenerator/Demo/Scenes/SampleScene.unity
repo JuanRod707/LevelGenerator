@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Seed: 0
+  SectionContainer: {fileID: 0}
   MaxLevelSize: 50
   MaxAllowedOrder: 12
   Sections:
